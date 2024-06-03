@@ -57,6 +57,7 @@ function draw() {
   image(cam, 0, 0);
 
 } 
+
 function drawSkeleton() {
 // Draw all the tracked landmark points
 for (let i = 0; i < poses.length; i++) {
@@ -70,6 +71,12 @@ if (partA.score > 0.1 && partB.score > 0.1) {
 if (partA. score > 0.1 && partB. score > 0.1) {
  image (dinosaurImg,partB.x+100, partB.y,50,50)
  }
+}
+if(partA.score >0.1){
+  push()
+  textSize(40)
+  text("412730748 陳玟慈")
+  pop()
 }
 }
 
