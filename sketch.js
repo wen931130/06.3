@@ -55,12 +55,6 @@ function draw() {
   translate(cam.width, 0);
   scale(-1, 1);  //反向
   image(cam, 0, 0);
-  if(partA.score >0.1){
-    push()
-    textSize(40)
-    text("412730748 陳玟慈")
-    pop()
-  }
 } 
 
 function drawSkeleton() {
@@ -76,6 +70,12 @@ if (partA.score > 0.1 && partB.score > 0.1) {
 if (partA. score > 0.1 && partB. score > 0.1) {
  image (dinosaurImg,partB.x+100, partB.y,50,50)
  }
+ if(partA.score >0.1){
+  push()
+  textSize(40)
+  text("412730748 陳玟慈")
+  pop()
+}
 }
 }
 
