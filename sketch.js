@@ -67,7 +67,7 @@ function drawSkeleton() {
     if(partA.score >0.1){
       push()
       textSize(40)
-      text("412730748 陳玟慈",partA.x-width,partA.y-150)
+      text("412730748 陳玟慈",partA.x-width,partA.y-50)
       pop()
     }
     
