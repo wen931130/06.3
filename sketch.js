@@ -58,24 +58,19 @@ function draw() {
 
 } 
 function drawSkeleton() {
-  for (let i = 0; i < poses.length; i++) {
-    pose = poses[i];
-    partA = pose.keypoints[3];
-    partB = pose.keypoints[4];
-    if(partA.score >0.1){
-      push()
-      textSize(40)
-      scale(-1,1)
-      text("412730748 陳玟慈")
-      pop()
-    }
-    
-    if (partA.score > 0.1 && partB.score > 0.1) {
-      // Draw the dinosaur image between the ears
-      image(dinosaurImg, leftEar.x + 50, leftEar.y - 50, 50, 50);
-      image(dinosaurImg, leftEar.x + 50, leftEar.y - 25, 50, 50);
-    }
-  }
+// Draw all the tracked landmark points
+for (let i = 0; i < poses.length; i++) {
+ pose = poses [i];
+ partA = pose. keypoints [3];
+ partB = pose.keypoints [4];
+if (partA.score > 0.1 && partB.score > 0.1) {
+ image (carImg, partA.x, partA.y, 50,50)
+}
+// image(carImg, partA. x+100, partA. y-25, 50, 50)
+if (partA. score > 0.1 && partB. score > 0.1) {
+ image (dinosaurImg,partB.x+100, partB.y,50,50)
+ }
+}
 }
 
 /* Points (view on left of screen = left part - when mirrored)
