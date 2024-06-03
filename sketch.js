@@ -1,9 +1,3 @@
-/* MoveNet Skeleton - Steve's Makerspace (most of this code is from TensorFlow)
-
-MoveNet is developed by TensorFlow:
-https://www.tensorflow.org/hub/tutorials/movenet
-
-*/
 
 let video, bodypose, pose, keypoint, detector;
 let poses = [];
@@ -67,16 +61,14 @@ function drawSkeleton() {
     if(partA.score >0.1){
       push()
       textSize(40)
-      text("412730748 陳玟慈",partA.x-width,partA.y-50)
+      text("412730748 陳玟慈")
       pop()
     }
     
     if (partA.score > 0.1 && partB.score > 0.1) {
-      push()
       // Draw the dinosaur image between the ears
       image(dinosaurImg, leftEar.x + 50, leftEar.y - 50, 50, 50);
       image(dinosaurImg, leftEar.x + 50, leftEar.y - 25, 50, 50);
-      pop()
     }
   }
 }
