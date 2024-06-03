@@ -56,31 +56,16 @@ function draw() {
   scale(-1, 1);  //反向
   image(cam, 0, 0);
 
-}
-for (1 = 5; j < 9; j++) {
-  if (pose.keypoints[j].score > 0.1 && pose.keypoints [j + 2].score > 0.1) {
-     partA = pose.eypoints[j];
-     partB = pose. keypoints[j+2] ;
-  line (partA.x, partA.y, partB.x, partB.y)
-  } 
 } 
 function drawSkeleton() {
   for (let i = 0; i < poses.length; i++) {
     pose = poses[i];
-    partA = pose.keypoints[3];
-    partB = pose.keypoints[4];
-    if(partA.score >0.1){
-      push()
-      textSize(40)
-      scale(-1,1)
-      text("412730748 陳玟慈")
-      pop()
-    }
-    
-    if (partA.score > 0.1 && partB.score > 0.1) {
+    leftEar = pose.keypoints[3]; // Index 3 represents the left ear
+    rightEar = pose.keypoints[4]; // Index 4 represents the right ear
+
+    if (leftEar.score > 0.1 && rightEar.score > 0.1) {
       // Draw the dinosaur image between the ears
-      image(dinosaurImg, leftEar.x + 50, leftEar.y - 50, 50, 50);
-      image(dinosaurImg, leftEar.x + 50, leftEar.y - 25, 50, 50);
+      image(dinosaurImg, (leftEar.x + rightEar.x) / 2 - 25, (leftEar.y + rightEar.y) / 2 - 25, 50, 50);
     }
   }
 }
