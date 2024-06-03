@@ -64,7 +64,7 @@ for (let i = 0; i < poses.length; i++) {
  partA = pose. keypoints [3];
  partB = pose.keypoints [4];
 if (partA.score > 0.1 && partB.score > 0.1) {
- image (carImg, partA.x, partA.y, 50,50)
+ image (dinosaurImg, partA.x, partA.y, 50,50)
 }
 // image(carImg, partA. x+100, partA. y-25, 50, 50)
 if (partA. score > 0.1 && partB. score > 0.1) {
